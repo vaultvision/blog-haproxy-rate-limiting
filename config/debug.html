@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Debug</title>
+</head>
+
+<style>
+    body {
+        line-height: 1.25em;
+        font-size: 14px;
+        background-color: #222;
+        color: #aaa;
+    }
+
+    div.mb-1 {
+        float: left;
+    }
+
+    a[href]:hover {
+        color: #3ba0e6;
+    }
+
+    a[href] {
+        color: #1e8ad6;
+    }
+</style>
+
+<body>
+    <main>
+        <h1>Debug</h1>
+        <div>
+            <h2>Request Info</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>path</th>
+                        <td>%[path]</td>
+                    </tr>
+                    <tr>
+                        <th>src</th>
+                        <td>%[src]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <h2>Env</h2>
+            <p>Config values from: <code>/etc/sysconfig/vv/machine.env</code></p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>VV_HAPROXY_DEBUG</th>
+                        <td>%[env(VV_HAPROXY_DEBUG)]</td>
+                    </tr>
+                    <tr>
+                        <th>VV_HAPROXY_FE_HTTP_LISTEN_ADDR</th>
+                        <td>%[env(VV_HAPROXY_FE_HTTP_LISTEN_ADDR)]</td>
+                    </tr>
+                    <tr>
+                        <th>VV_HAPROXY_FE_METRICS_LISTEN_ADDR</th>
+                        <td>%[env(VV_HAPROXY_FE_METRICS_LISTEN_ADDR)]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div>
+            <h2>Proc</h2>
+            <p>Config values from: <code>/etc/haproxy/maps/config.map</code></p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>proc.vv_global_conn_cur_limit</th>
+                        <td>%[var(proc.vv_global_conn_cur_limit)]</td>
+                    </tr>
+                    <tr>
+                        <th>proc.vv_global_conn_rate_limit</th>
+                        <td>%[var(proc.vv_global_conn_rate_limit)]</td>
+                    </tr>
+                    <tr>
+                        <th>proc.vv_global_http_rate_limit</th>
+                        <td>%[var(proc.vv_global_http_rate_limit)]</td>
+                    </tr>
+                    <tr>
+                        <th>proc.vv_path_default_http_rate_limit</th>
+                        <td>%[var(proc.vv_path_default_http_rate_limit)]</td>
+                    </tr>
+                    <tr>
+                        <th>proc.vv_path_static_http_rate_limit</th>
+                        <td>%[var(proc.vv_path_static_http_rate_limit)]</td>
+                    </tr>
+                    <tr>
+                        <th>proc.vv_path_api_http_rate_limit</th>
+                        <td>%[var(proc.vv_path_api_http_rate_limit)]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div>
+            <h2>Txn</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>txn.vv_global_conn_cur_current</th>
+                        <td>%[var(txn.vv_global_conn_cur_current)]</td>
+                    </tr>
+                    <tr>
+                        <th>txn.vv_global_conn_rate_current</th>
+                        <td>%[var(txn.vv_global_conn_rate_current)]</td>
+                    </tr>
+                    <tr>
+                        <th>txn.vv_global_http_rate_current</th>
+                        <td>%[var(txn.vv_global_http_rate_current)]</td>
+                    </tr>
+                    <tr>
+                        <th>txn.vv_path_http_rate_current</th>
+                        <td>%[var(txn.vv_path_http_rate_current)]</td>
+                    </tr>
+                    <tr>
+                        <th>txn.vv_path_http_rate_limit</th>
+                        <td>%[var(txn.vv_path_http_rate_limit)]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <h2>Acls</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>is_global_conn_cur_limited</th>
+                        <td>%[var(txn.vv_acl_str_is_global_conn_cur_limited)]</td>
+                    </tr>
+                    <tr>
+                        <th>is_global_conn_rate_limited</th>
+                        <td>%[var(txn.vv_acl_str_is_global_conn_rate_limited)]</td>
+                    </tr>
+                    <tr>
+                        <th>is_global_http_rate_limited</th>
+                        <td>%[var(txn.vv_acl_str_is_global_http_rate_limited)]</td>
+                    </tr>
+                    <tr>
+                        <th>is_path_http_rate_limited</th>
+                        <td>%[var(txn.vv_acl_str_is_path_http_rate_limited)]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Rates</h2>
+        <ul>
+            <li>
+                txn.vv_global_conn_cur_max:
+                %[var(txn.vv_global_conn_cur_max)]
+            </li>
+            <li>
+                txn.vv_global_conn_cur_max:
+                %[var(txn.vv_global_conn_cur_max)]
+            </li>
+            <li>
+                txn.vv_global_conn_cur_max:
+                %[var(txn.vv_global_conn_cur_max)]
+            </li>
+
+            <li>
+                txn.vv_global_rate_limit:
+                %[var(txn.vv_global_rate_limit)]
+            </li>
+            <li>
+                txn.vv_global_rate_current:
+                %[var(txn.vv_global_rate_current)]
+            </li>
+
+            <li>
+                txn.vv_path_rate_limit:
+                %[var(txn.vv_path_rate_limit)]
+            </li>
+            <li>
+                txn.vv_path_rate_current:
+                %[var(txn.vv_path_rate_current)]
+            </li>
+
+            <li>
+                src,table_http_req_rate(st_global):
+                %[src,table_http_req_rate(st_global)]
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>

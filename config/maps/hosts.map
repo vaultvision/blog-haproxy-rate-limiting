@@ -1,0 +1,6 @@
+# Hostname | Backend
+##
+
+example.test be_example_ui
+api.example.test be_example_api
+docs.example.test be_example_docs

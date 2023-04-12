@@ -1,0 +1,7 @@
+# Networks to blacklist
+#
+# Examples:
+#
+#   127.0.0.1     # Block single address
+#   127.0.0.1/32  # Same as above in CIDR notation
+#

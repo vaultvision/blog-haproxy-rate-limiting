@@ -1,0 +1,28 @@
+# Path | Rate per 10s
+##
+
+# Example - UI Login
+/login 30
+
+# Example - API Paths
+/v1/login 10
+
+# Debugging Rates - UI
+/haproxy/rates/1 1
+/haproxy/rates/2 2
+/haproxy/rates/4 4
+/haproxy/rates/8 8
+/haproxy/rates/16 16
+/haproxy/rates/32 32
+/haproxy/rates/64 64
+/haproxy/rates/128 128
+
+# Debugging rates - API
+/v1/haproxy/rates/1 1
+/v1/haproxy/rates/2 2
+/v1/haproxy/rates/4 4
+/v1/haproxy/rates/8 8
+/v1/haproxy/rates/16 16
+/v1/haproxy/rates/32 32
+/v1/haproxy/rates/64 64
+/v1/haproxy/rates/128 128

@@ -1,0 +1,9 @@
+# Prefix | Global Rate per 10s
+#
+# Examples:
+#
+#   127.0.0.1     10  # Overwrite rate limit for a single IP address
+#   127.0.0.1/32  10  # Same as above in CIDR notation
+#   127.0.0.1/24  10  # Target entire class C
+#   172.0.0.0/4    4  # Target the 172.* network in docker for testing 
+#

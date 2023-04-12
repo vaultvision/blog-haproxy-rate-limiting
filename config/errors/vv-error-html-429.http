@@ -1,0 +1,30 @@
+HTTP/1.0 429 Too Many Requests
+Cache-Control: no-cache
+Connection: close
+Content-Type: text/html
+
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+    <title>Too Many Requests</title>
+</head>
+
+<body>
+    <main>
+        <div>
+            <div>
+                429
+            </div>
+            <p>
+                Your browser is sending too many requests.
+            </p>
+            <hr>
+            <p>
+                Try refreshing the page, or going back and attempting the action again.
+            </p>
+        </div>
+    </main>
+</body>
+
+</html>

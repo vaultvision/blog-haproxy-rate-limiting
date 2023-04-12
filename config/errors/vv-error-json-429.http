@@ -1,0 +1,9 @@
+HTTP/1.0 429 Too Many Requests
+Cache-Control: no-cache
+Connection: close
+Content-Type: application/json
+
+{
+  "status_code": "429",
+  "status_text": "Too Many Requests"
+}

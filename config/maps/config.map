@@ -1,0 +1,20 @@
+# Config Key | Config Value
+##
+
+# Global - maximum concurrent connections
+vv_global_conn_cur_limit 20
+
+# Global (by src, per 10s) - maximum connection rate
+vv_global_conn_rate_limit 21
+
+# Global (by src, per 10s) - maximum http requests to all resources.
+vv_global_http_rate_limit 22
+
+# Global (by base32+src, per 10s) - maximum http requests to all other resources
+vv_path_default_http_rate_limit 23
+
+# Global (by base32+src, per 10s) - maximum http requests to static resources
+vv_path_static_http_rate_limit 24
+
+# Global (by base32+src, per 10s) - maximum http requests to API
+vv_path_api_http_rate_limit 25
