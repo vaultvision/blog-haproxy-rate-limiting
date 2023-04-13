@@ -146,7 +146,7 @@ The next section is one of the more important baseline settings for haproxy as n
     maxconn 1024
 ```
 
-> *note*  An interesting quirk to this as of HAProxy 2.7 is that if you don't set maxconn if you don't set maxconn it will be set to whatever the number for ulimit -n is. While it can be 1024, on some systems it may be higher or lower. For my workstation it was actually 1_073_741_816 which equates to an immediate 164G of virtual memory usage and 200% CPU usage before finally ooming.
+> *note*  An interesting quirk to this as of HAProxy 2.7 is that if you don't set maxconn it will be set to whatever the number for ulimit -n is. While it can be 1024, on some systems it may be higher or lower. For my workstation it was actually 1_073_741_816 which equates to an immediate 164G of virtual memory usage and 200% CPU usage before finally ooming.
 
 For general configuration we have some values loaded from a map. The location of this file depends on how HAProxy is installed on your system. It will generally be rooted within the `etc` directory under the name `haproxy`, for example:
 
